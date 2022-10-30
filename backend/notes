@@ -1,0 +1,29 @@
+Overview
+
+Owner
+has_many :pets
+has_many :todos through :pets
+name
+email
+
+Pet
+belongs_to :owner
+has_many :todos
+name
+kind
+age
+breed
+
+Todo
+belongs_to :pet
+description
+date  datetime.to_formatted_s(:short)         # => "04 Dec 00:00"
+
+
+
+Owner stories
+Owner should be able to ...
+-add pets
+-add a todo to the schedule
+-edit and delete pet or todo
+-calendar?
